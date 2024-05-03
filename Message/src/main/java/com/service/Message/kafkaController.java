@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import ch.qos.logback.core.util.Duration;
-import service.MessageProducer;
 
 @RestController
 public class kafkaController {
@@ -20,7 +19,7 @@ public class kafkaController {
     @GetMapping("/send")
     public String sendMessage(@RequestParam("message") String message) {
         messageProducer.sendMessage("HaySad", message);
-        System.out.println(message + "can go to Database Topic");
-        return "Goodconnext";
+        System.out.println("Message Sent = " + message + "can go to Database Topic");
+        return "Message sent: " + message;
     }
 }
