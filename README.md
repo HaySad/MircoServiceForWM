@@ -4,3 +4,7 @@
 DatabaseTest
 SA
 Kiattipat123
+
+*DNS*
+
+serviceserversol.ddns.net
