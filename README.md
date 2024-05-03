@@ -1,8 +1,11 @@
 *Database*
 
-100.70.244.28
+100.100.240.237
+
 DatabaseTest
+
 SA
+
 Kiattipat123
 
 *DNS*
