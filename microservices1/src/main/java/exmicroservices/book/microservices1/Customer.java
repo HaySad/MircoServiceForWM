@@ -11,13 +11,13 @@ public class Customer {
 	
 	@jakarta.persistence.Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	Integer TransportID;
-	String FirstName;
-	String LastName;
-	String ShipperName;
-	String LicensePlate;
-	String DeliveryDate;
-	String AlreadyShipped;
+	private Integer TransportID;
+	private String FirstName;
+	private String LastName;
+	private String ShipperName;
+	private String LicensePlate;
+	private String DeliveryDate;
+	private String AlreadyShipped;
 	//พร้อม getter และ setter
 	
 	public Customer() {
@@ -40,16 +40,16 @@ public class Customer {
 	public void setId(Integer TransportID) {
 		this.TransportID = TransportID;
 	}
-	public String firstName() {
+	public String getFirstName() {
 		return FirstName;
 	}
-	public void setfirstName(String FirstName) {
+	public void setFirstName(String FirstName) {
 		this.FirstName = FirstName;
 	}
-	public String lastName() {
+	public String getLastName() {
 		return LastName;
 	}
-	public void setlastName(String LastName) {
+	public void setLastName(String LastName) {
 		this.LastName = LastName;
 	}
 	

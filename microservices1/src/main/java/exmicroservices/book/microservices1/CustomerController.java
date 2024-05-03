@@ -20,6 +20,4 @@ public class CustomerController {
         List<Customer> customers = customerService.getAllCustomers();
         return new ResponseEntity<>(customers, HttpStatus.OK);
     }
-
-    // เพิ่มเมทอดอื่น ๆ ตามที่ต้องการ
 }

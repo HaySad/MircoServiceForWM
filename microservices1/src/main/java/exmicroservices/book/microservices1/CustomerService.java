@@ -16,5 +16,4 @@ public class CustomerService {
         return customerRepository.findAll();
     }
 
-    // สามารถเพิ่มเมทอดอื่น ๆ ตามที่ต้องการ
 }
