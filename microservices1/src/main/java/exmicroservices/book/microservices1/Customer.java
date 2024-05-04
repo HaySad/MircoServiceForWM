@@ -6,7 +6,7 @@ import javax.persistence.GenerationType;
 import jakarta.persistence.Entity;
 
 @Entity
-@jakarta.persistence.Table(name="imported_car")
+@jakarta.persistence.Table(name="dbo_imported_car")
 public class Customer {
 	
 	@jakarta.persistence.Id
@@ -40,16 +40,16 @@ public class Customer {
 	public void setId(Integer TransportID) {
 		this.TransportID = TransportID;
 	}
-	public String firstName() {
+	public String getFirstName() {
 		return FirstName;
 	}
-	public void setfirstName(String FirstName) {
+	public void setFirstName(String FirstName) {
 		this.FirstName = FirstName;
 	}
-	public String lastName() {
+	public String getLastName() {
 		return LastName;
 	}
-	public void setlastName(String LastName) {
+	public void setLastName(String LastName) {
 		this.LastName = LastName;
 	}
 	
