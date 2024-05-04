@@ -6,18 +6,18 @@ import javax.persistence.GenerationType;
 import jakarta.persistence.Entity;
 
 @Entity
-@jakarta.persistence.Table(name="imported_car")
+@jakarta.persistence.Table(name="dbo_imported_car")
 public class Customer {
 	
 	@jakarta.persistence.Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Integer TransportID;
-	private String FirstName;
-	private String LastName;
-	private String ShipperName;
-	private String LicensePlate;
-	private String DeliveryDate;
-	private String AlreadyShipped;
+	Integer TransportID;
+	String FirstName;
+	String LastName;
+	String ShipperName;
+	String LicensePlate;
+	String DeliveryDate;
+	String AlreadyShipped;
 	//พร้อม getter และ setter
 	
 	public Customer() {

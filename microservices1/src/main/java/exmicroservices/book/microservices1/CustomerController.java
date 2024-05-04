@@ -1,23 +1,39 @@
 package exmicroservices.book.microservices1;
 
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
-import exmicroservices.book.microservices1.Customer;
-import exmicroservices.book.microservices1.CustomerService;
-import java.util.List;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/customers")
 public class CustomerController {
 
+    //private final CustomerService customerService;
+    
     @Autowired
-    private CustomerService customerService;
+    private CustomerRepository repositor;
+    
+    @Autowired
+    private MessageProducer messageProducer;
 
-    @GetMapping("/")
+    /*@GetMapping("/")
     public ResponseEntity<List<Customer>> getAllCustomers() {
         List<Customer> customers = customerService.getAllCustomers();
         return new ResponseEntity<>(customers, HttpStatus.OK);
     }
+    */
+    @GetMapping("/cheackCar")
+    public Customer getId(@RequestParam("License")Integer num) {
+    	Optional<Customer> cut = repositor.findById(num);
+    	//cut.get().setAlreadyShipped("Y");
+    	repositor.save(cut.get());
+    	System.out.print(cut.get());
+    	
+    	messageProducer.sendMessage("SPNEW", cut.get());
+    	
+		return cut.get();
+    }
+    
 }
