@@ -1,13 +1,19 @@
-*Database*
+# รายละเอียด
 
-100.100.240.237
+**ข้อมูล**
 
-DatabaseTest
+<i>kafkaProducerScan</i> and <i>kafkaConsumerScan</i>
 
-SA
+เป็น Service ของการสแกนข้อมูลจาก Barcode เข้าสู่ระบบและส่งไปให้กับ Consumer
 
-Kiattipat123
+<i>microservices1</i> 
 
-*DNS*
+เป็น Service ที่เป็น DataController ที่ดึงข้อมูลรถที่จะนำเข้ามาเพื่อส่งไปยัง <i>KafkaConsumer2</i> โดยตัวมันนั้นจะรับข้ความ pack ของมูลเป็น repo แล้วสะกัดนำข้อมูลไปค้นใน ฐานข้อมูลของสิ่นค้า
 
-serviceserversol.ddns.net
+**Database**
+
+ใช้เป็น Docker โดยเป็นคอแทนเนอร์ของ `mcr.microsoft.com/mssql/server:2022-latest`
+
+Update 4/4
+
+
